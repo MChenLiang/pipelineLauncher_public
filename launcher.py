@@ -22,8 +22,8 @@ import source.mcl_launcher as mcl_launcher
 import source.start_software as start_software
 
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ #
-global qApp
-qApp: QApplication
+global qt_app
+qt_app: QApplication
 
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+ #
 
@@ -162,8 +162,8 @@ class MainFunc(QMainWindow):
 
     def exit_action(self):
         self.close()
-        global qApp
-        qApp.quit()
+        global qt_app
+        qt_app.quit()
 
     # 自定义控制按钮+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
     def add_ctrl_bt(self):
@@ -292,8 +292,8 @@ if __name__ == '__main__':
                         str(exe_name)),
                     str(exe_name))
 
-    global qApp
-    qApp = QApplication(sys.argv)
+    global qt_app
+    qt_app = QApplication(sys.argv)
     ui = MainFunc()
     anim_path = icon_path('waiting.gif')
     splash = startup_interface.SplashScreen(
@@ -304,4 +304,4 @@ if __name__ == '__main__':
         Qt.AlignLeft | Qt.AlignBottom,
         Qt.yellow)
     splash.show()
-    sys.exit(qApp.exec_())
+    sys.exit(qt_app.exec_())

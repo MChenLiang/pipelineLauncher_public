@@ -189,7 +189,7 @@ REDSHIFT_CONF = {
 
 }
 
-MAYAToolVariables = {
+MAYA_VARIABLES = {
     'MAYA_SCRIPT_PATH': ['{0}/Maya/Tools/{1}'.format(PROJECT_MAYA_PATH, MAYA_VERSION),
                          '{0}/Maya/Tools/{1}/ANI'.format(PROJECT_MAYA_PATH, MAYA_VERSION),
                          '{0}/Maya/Tools/{1}/CFX'.format(PROJECT_MAYA_PATH, MAYA_VERSION),

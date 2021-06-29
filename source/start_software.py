@@ -4,11 +4,11 @@
 __author__ = 'ChenLiang.Miao'
 
 # --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
-import sys
-import tempfile
 import importlib
-import subprocess
 import pathlib
+import subprocess
+import tempfile
+
 from . import configuration
 
 # --+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+--#
@@ -48,7 +48,10 @@ def launcher_project_software(project, software):
         f.write(software_location + '\r\n')
 
     #
-    proc = subprocess.Popen('explorer.exe "{0}"'.format(tmp_file), stdout=subprocess.PIPE, shell=True,
-                            stderr=subprocess.PIPE)
+    proc = subprocess.Popen(
+        'explorer.exe "{0}"'.format(tmp_file),
+        stdout=subprocess.PIPE,
+        shell=True,
+        stderr=subprocess.PIPE)
     proc.communicate()
     del proc
